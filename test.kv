@@ -1,6 +1,6 @@
 <Gerenciador>:
   Menu:
-    text: 'menu'
+    name: 'menu'
   Tarefas:
     name: 'tarefas'
 
@@ -9,6 +9,11 @@
     orientation: 'vertical'
     padding: 200
     spacing: 50
+    Image:
+      source: 'img/logo.png'
+      size_hint_y: None
+      height: 300
+      allow_stretch: True
     Button:
       text: 'Tarefas'
       on_release: app.root.current = 'tarefas'
@@ -21,6 +26,11 @@
 <Tarefas>:
   BoxLayout:
     orientation: 'vertical'
+    ActionBar:
+      ActionView:
+        ActionPrevious:
+          title: 'Tarefas'
+          on_release: app.root.current = 'menu'
     ScrollView:
       BoxLayout:
         id: box
